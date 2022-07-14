@@ -44,5 +44,58 @@ function generateNav() {
         if (e.target.classList.contains("active")) return;
         setActiveButton(contactBtn);
         loadContact;
-    })
+    });
+
+    nav.appendChild(homeBtn);
+    nav.appendChild(menuBtn);
+    nav.appendChild(contactBtn);
+
+    return nav;
+}
+
+function setActiveButton(button) {
+    const buttons = document.querySelectorAll(".nav-btn");
+
+    buttons.forEach((button) => {
+        if (button !== this) {
+            buttons.classList.remove("active");
+        }
+    });
+
+    button.classList.add("active");
+}
+
+function generateMain() {
+    const main = document.createElement("main");
+    main.classList.add("main");
+    main.setAttribute("id", "main");
+    return main;
+}
+
+function generateFooter() {
+    const footer = document.createElement("footer");
+    footer.classList.add("footer");
+
+    const ghLink = document.createElement("a");
+    ghLink.href = "https://github.com/Scrif";
+
+    const ghIcon = document.createElement("i");
+    ghIcon.classList.add("fab");
+    ghIcon.classList.add("fa-github");
+
+    ghLink.appendChild(ghIcon);
+    footer.appendChild(ghLink);
+
+    return footer;
+}
+
+function generateSite() {
+    const content = document.getElementById("content");
+
+    content.appendChild(generateHeader());
+    content.appendChild(generateMain());
+    content.appendChild(generateFooter());
+
+    setActiveButton(document.querySelector(".nav-btn"));
+    loadHome();
 }
