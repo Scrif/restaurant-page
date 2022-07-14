@@ -99,3 +99,5 @@ function generateSite() {
     setActiveButton(document.querySelector(".nav-btn"));
     loadHome();
 }
+
+export default generateSite;
