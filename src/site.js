@@ -58,7 +58,7 @@ function setActiveButton(button) {
 
     buttons.forEach((button) => {
         if (button !== this) {
-            buttons.classList.remove("active");
+            button.classList.remove("active");
         }
     });
 
